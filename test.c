@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:53:09 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/25 16:46:06 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/25 16:49:00 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ int	main(void)
 {
 
 	printf("%d\n", sum(3, 3, 3, 3, 3));
-	ft_printf("")
+	ft_printf("hello %s say hi %d times\n", "world", 3);
 	return (0);
 }
