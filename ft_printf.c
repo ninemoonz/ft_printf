@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 13:19:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/27 15:54:21 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/27 16:30:33 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ int type_specifier(va_list args, char c)
 	va = 0;
     if (c == 's')
         va = ft_putstr(va_arg(args, char *));
+    if (c == 'c')
+        va = ft_putchar(va_arg(args, int));
+    if (c == 'i' || c == 'd')
+        va = ft_putnbr(va_arg(args, int));
+    if (c == 'u')
+        va = 
     return (va);
 }
 
@@ -38,7 +44,10 @@ int ft_printf(const char *format, ...)
 		if (format[i] == '%')
         {
             if (format[i + 1] != '\0')
-                data_type += type_specifier(args, format[i + 1]);
+            {
+                data_type = type_specifier(args, format[i + 1]);
+                i++;
+            }
         }
         else
             data_type += ft_putchar(format[i]);
@@ -51,6 +60,9 @@ int ft_printf(const char *format, ...)
 int main (void)
 {
     char *nine = "nine";
-	ft_printf("hello %s", nine);
-	return (0);
+    char c = 'c';
+    int nbr = 123;
+
+	ft_printf("hello %s, %c, %i, %d", nine, c, nbr, nbr);
+    return (0);
 }

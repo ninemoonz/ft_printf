@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:55:23 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/27 16:19:14 by kkweon           ###   ########.fr       */
+/*   Created: 2025/10/22 14:30:03 by kkweon            #+#    #+#             */
+/*   Updated: 2025/11/27 16:31:09 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-int ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
+int	ft_putnbr(int n)
+{
+	int res;
 
-#endif
-
-
-
-
+	res = 0;
+	if (n == -2147483648)
+		return (write(1, "-2147483648", 11));
+	else if (n < 0)
+	{
+		res = write(1, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		res = ft_putnbr(n / 10);
+		res++;
+		res = ft_putnbr(n % 10);
+		res++;
+	}
+	else
+	{
+		res = ft_putchar(n + '0');
+		res++;
+	}
+	return (res);
+}
