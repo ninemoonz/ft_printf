@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 13:19:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/27 16:30:33 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/27 16:36:27 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int type_specifier(va_list args, char c)
     if (c == 'i' || c == 'd')
         va = ft_putnbr(va_arg(args, int));
     if (c == 'u')
-        va = 
+        va = ft_putunbr(va_arg(args, unsigned int));
     return (va);
 }
 
@@ -62,7 +62,8 @@ int main (void)
     char *nine = "nine";
     char c = 'c';
     int nbr = 123;
+    unsigned int unbr = -123;
 
-	ft_printf("hello %s, %c, %i, %d", nine, c, nbr, nbr);
+	ft_printf("hello %s, %c, %i, %d, %u", nine, c, nbr, nbr, unbr);
     return (0);
 }
