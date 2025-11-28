@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 13:19:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 16:05:48 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/28 16:45:00 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int type_specifier(va_list args, char c)
         va = ft_puthex(va_arg(args, int));
     if (c == 'X')
         va = ft_putuphex(va_arg(args, int));
+    if (c == 'p')
+        va = ft_putptr(va_arg(args, void *));
     return (va);
 }
 
@@ -79,6 +81,7 @@ int main (void)
     ft_printf("percentage sign: %%\n");
     ft_printf("hexadecimal x for 45: %x\n", 45);
     ft_printf("hexadecimal X for 45: %X\n", 45);
+    ft_printf("memory address is %p", &what);
 
     ft_printf("\n");
     printf("[STANDARD PRINTF RESULT]\n");

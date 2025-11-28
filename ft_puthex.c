@@ -6,13 +6,13 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:59:22 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 15:25:36 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/28 16:37:35 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_puthex(unsigned int n)
+int ft_puthex(unsigned long long n)
 {
     char *hex_letter = "0123456789abcdef";
     int hex_nbr;

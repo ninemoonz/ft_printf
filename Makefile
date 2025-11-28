@@ -10,7 +10,8 @@ SRC = ft_printf.c \
 	ft_putunbr.c \
 	ft_toupper.c \
 	ft_puthex.c \
-	ft_putuphex.c
+	ft_putuphex.c \
+	ft_putptr.c
 
 OBJ = $(SRC:%.c=%.o)
 
