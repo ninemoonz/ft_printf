@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 13:19:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 15:40:05 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/28 16:05:48 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,10 @@ int type_specifier(va_list args, char c)
         va = ft_putunbr(va_arg(args, int));
     if (c == '%')
         va = ft_putchar('%');
-    if (c == 'x' || c == 'X')
-    {
-        if (c == 'X')
-            va = ft_toupper(ft_puthex(va_arg(args, int)));
-        else
-            va = ft_puthex(va_arg(args, int));
-    }
+    if (c == 'x')
+        va = ft_puthex(va_arg(args, int));
+    if (c == 'X')
+        va = ft_putuphex(va_arg(args, int));
     return (va);
 }
 
@@ -68,6 +65,10 @@ int ft_printf(const char *format, ...)
 
 int main (void)
 {
+    int what;
+
+    what = 10;
+
     ft_printf("\n");
     ft_printf("[FT_PRINTF RESULT]\n");
     ft_printf("string: %s\n", "this is string");
@@ -89,6 +90,7 @@ int main (void)
     printf("percentage sign: %%\n");
     printf("hexadecimal x for 45: %x\n", 45);
     printf("hexadecimal X for 45: %X\n", 45);
+    printf("memory address is %p", &what);
     printf("\n");
     
     return (0);

@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putaddress.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:55:23 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 16:01:56 by kkweon           ###   ########.fr       */
+/*   Created: 2025/11/28 16:07:04 by kkweon            #+#    #+#             */
+/*   Updated: 2025/11/28 16:12:39 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_printf.h"
+#include "ft_printf.h"
+void ft_putaddress(void *n)
+{
+    
+}
 
-int ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putunbr(unsigned int n);
-int	ft_toupper(int c);
-int ft_puthex(unsigned int n);
-int ft_putuphex(unsigned int n);
-
-#endif
-
-
-
-
+int main (void)
+{
+    int what;
+    
+    what = 0;
+    printf("%p", &what);
+    ft_putaddress(&what);
+}

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putuphex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 14:55:23 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 16:01:56 by kkweon           ###   ########.fr       */
+/*   Created: 2025/11/28 12:59:22 by kkweon            #+#    #+#             */
+/*   Updated: 2025/11/28 16:01:45 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_printf.h"
+#include "ft_printf.h"
 
-int ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int n);
-int	ft_putunbr(unsigned int n);
-int	ft_toupper(int c);
-int ft_puthex(unsigned int n);
-int ft_putuphex(unsigned int n);
+int ft_putuphex(unsigned int n)
+{
+    char *hex_letter = "0123456789ABCDEF";
+    int hex_nbr;
 
-#endif
-
-
-
-
+    hex_nbr = 0;
+    if (n >= 16)
+    {
+        ft_putuphex(n / 16);
+        hex_nbr++;
+    }   
+    write(1, &hex_letter[n % 16], 1);
+    return (hex_nbr);
+}
