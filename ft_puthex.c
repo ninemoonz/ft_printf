@@ -6,25 +6,23 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 12:59:22 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 13:17:42 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/28 15:25:36 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-void ft_puthex(int n)
+
+int ft_puthex(unsigned int n)
 {
     char *hex_letter = "0123456789abcdef";
-    int hex_index;
+    int hex_nbr;
 
-    while (n != 0)
+    hex_nbr = 0;
+    if (n >= 16)
     {
-        hex_index = n / 16;
-        ft_putchar(hex_letter[hex_index]);
-    }
-}
-
-int main (void)
-{
-    ft_puthex(30);
-    return (0);
+        ft_puthex(n / 16);
+        hex_nbr++;
+    }   
+    write(1, &hex_letter[n % 16], 1);
+    return (hex_nbr);
 }

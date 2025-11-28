@@ -6,7 +6,7 @@
 /*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 14:55:23 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 13:04:22 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/28 15:22:50 by kkweon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	ft_putstr(char *s);
 int	ft_putnbr(int n);
 int	ft_putunbr(unsigned int n);
 int	ft_toupper(int c);
+int ft_puthex(unsigned int n);
 
 #endif
 
