@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kkweon <kkweon@student.42.fr>              +#+  +:+       +#+        */
+/*   By: koodal <koodal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 13:19:29 by kkweon            #+#    #+#             */
-/*   Updated: 2025/11/28 16:45:00 by kkweon           ###   ########.fr       */
+/*   Updated: 2025/11/29 13:26:53 by koodal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// for va_list, va_start, va_arg, va_end functions
 
 int type_specifier(va_list args, char c)
 {
@@ -62,7 +60,7 @@ int ft_printf(const char *format, ...)
         i++;
 	}
     va_end(args);
-    return (0);
+    return (data_type);
 }
 
 int main (void)
@@ -82,7 +80,6 @@ int main (void)
     ft_printf("hexadecimal x for 45: %x\n", 45);
     ft_printf("hexadecimal X for 45: %X\n", 45);
     ft_printf("memory address is %p", &what);
-
     ft_printf("\n");
     printf("[STANDARD PRINTF RESULT]\n");
     printf("string: %s\n", "this is string");
